@@ -1,0 +1,11 @@
+(define x 4)
+
+(define funkyFunction
+    (lambda (a b c)
+        a))
+
+(define y (funkyFunction 1 2 3))
+
+x
+y
+    

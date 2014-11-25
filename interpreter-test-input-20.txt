@@ -1,0 +1,6 @@
+(define doit2
+  (lambda (x)
+    (let* ((a 3) (b (+ a 1)))
+      (+ a b x))))
+
+(doit2 10)

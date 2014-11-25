@@ -1,0 +1,7 @@
+(define doit
+    (lambda (x)
+          (begin
+          (set! x (+ x 1))
+          (+ x x))))
+          
+(doit 5)

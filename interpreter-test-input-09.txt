@@ -1,0 +1,5 @@
+(define theThing
+    (lambda (x y)
+        (if #t x y)))
+        
+(theThing 7 8 8)

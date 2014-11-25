@@ -1,0 +1,44 @@
+(define length
+  (lambda (L)
+    (if (null? L)
+        0
+        (+ 1 (length (cdr L))))))
+        
+        
+(define append
+  (lambda (L1 L2)
+    (if (null? L1)
+        L2
+        (cons (car L1) (append (cdr L1) L2)))))
+
+(define reverse-list
+  (lambda (L)
+    (if (null? L)
+        L
+        (append (reverse-list (cdr L)) (cons (car L) (quote ()))))))
+        
+(define finalList (quote()))
+(define itemCount 0)
+(define keep-first-n
+  (lambda(n listToParse)
+    (define revListToParse(reverse-list listToParse))
+    (if (< (length listToParse) n)
+        "The list is not that big, please try again."
+        (if (< n 0)
+            "N cannot be a negative number, please try again."
+            (if (= (length listToParse) n)
+                (reverse-list revListToParse)
+                (keep-first-n n (reverse-list(cdr revListToParse))))))))
+             ;take the cdr until length is n, then reverse again
+
+
+(define sum
+  (lambda (listToSum)
+    ;;take the first element of the list and add it to the rest of the list recursively
+    (if (null? listToSum)
+        0
+        (+ (car listToSum)(sum (cdr listToSum))))))
+        
+(sum (quote (2 3 4)))
+(+ 4 5)
+(keep-first-n 4 (quote (2 3 4 5 6 7 8)))
